@@ -58,6 +58,25 @@ We now test the generation of bundles via BFGS, using the implementation of http
   <strong>Figure 4.</strong>
 </p>
 
+We see that BFGS is indeed able to find a suitable bundle.
+
+## Superlinear steps
+
+We now use the above bundling mechanisms to perform superlinear steps using the higher-order cutting-plane model of [1]. To this end, we use the following simple iterative scheme:
+1. Apply a bundling mechanism (DSG or BFGS) with final iterate $x^{j }$.
+2. Solve the the resulting subproblem (3.4) of [1], yielding a point $\bar{z}$.
+3. If $f(\bar{z}) < f(x^{j })$ then set $x^j = \bar{z}$.
+4. Increase $j$ and go to 1.
+
+The following figure show the results when applying this scheme to the above examples. A circle around an iterate indicates that the corresponding point was computed using the problem (3.4) of [1] (see Step 3 above). As expected, we see that for $j$ large enough, superlinear steps are performed successfully.
+
+<p>
+  <img src="Example_LW2019_84/plot_DGS_hybrid.png" height="250" />
+  <img src="Example_LW2019_84/plot_BFGS_hybrid.png" height="250" />
+  <br/>
+  <strong>Figure 5. (8.4) from [4] for DGS (left) and BFGS (right)</strong>
+</p>
+
 ## References
 
 [1] Gebken, B., Ulbrich, M.: Superlinear convergence in nonsmooth optimization via higher-order cutting-plane models. (2026). https://arxiv.org/abs/2603.23236 \
