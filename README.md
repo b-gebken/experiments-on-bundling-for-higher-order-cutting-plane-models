@@ -68,7 +68,7 @@ We now use the above bundling mechanisms to perform superlinear steps using the 
 3. If $f(\bar{z}) < f(x^{j })$ then set $x^j = \bar{z}$.
 4. Increase $j$ and go to 1.
 
-The following figure show the results when applying this scheme to the above examples. (The trust-region subproblems are solved via the Matlab interface mexIPOPT (https://github.com/ebertolazzi/mexIPOPT) of IPOPT (https://github.com/coin-or/Ipopt).) A circle around an iterate indicates that the corresponding point was computed using the problem (3.4) of [1] (see Step 3 above). As expected, we see that for $j$ large enough, superlinear steps are performed successfully.
+The following figures show the results when applying this scheme to the above examples. (The trust-region subproblems are solved via the Matlab interface mexIPOPT (https://github.com/ebertolazzi/mexIPOPT) of IPOPT (https://github.com/coin-or/Ipopt).) A circle around an iterate indicates that the corresponding point was computed using the problem (3.4) of [1] (see Step 3 above). As expected, we see that for $j$ large enough, superlinear steps are performed successfully.
 
 <p>
   <img src="Example_LW2019_84/plot_DGS_hybrid.png" height="250" />
