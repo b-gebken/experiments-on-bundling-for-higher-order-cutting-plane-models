@@ -25,9 +25,9 @@ The left plot shows that $(x^j)\_j$ converges to $x^{* }$. The middle plot shows
 The second example is the convex function Chained Mifflin 2 for $n = 51$, which can be found, e.g., in [6].
 
 <p>
-  <img src="Chained_Mifflin_2/plot_DGS_bundling_1.png" height="250" />
-  <img src="Chained_Mifflin_2/plot_DGS_bundling_2.png" height="250" />
-  <img src="Chained_Mifflin_2/plot_DGS_bundling_3.png" height="250" />
+  <img src="Example_Chained_Mifflin_2/plot_DGS_bundling_1.png" height="250" />
+  <img src="Example_Chained_Mifflin_2/plot_DGS_bundling_2.png" height="250" />
+  <img src="Example_Chained_Mifflin_2/plot_DGS_bundling_3.png" height="250" />
   <br/>
   <strong>Figure 2.</strong>
 </p>
@@ -35,6 +35,16 @@ The second example is the convex function Chained Mifflin 2 for $n = 51$, which 
 We see the same result as in the first example, even though this function has $2^{n-1} \approx 1.13 \cdot 10^{15}$ selection functions (which are affinely dependent).
 
 The third example is the nonconvex function (8.5) from [5] for $n = 50$ and $k = 40$.
+
+<p>
+  <img src="Example_LW2019_85/plot_DGS_bundling_1.png" height="250" />
+  <img src="Example_LW2019_85/plot_DGS_bundling_2.png" height="250" />
+  <img src="Example_LW2019_85/plot_DGS_bundling_3.png" height="250" />
+  <br/>
+  <strong>Figure 3.</strong>
+</p>
+
+Despite the nonconvexity, we see the same behavior as in the first two examples.
 
 ## References
 
