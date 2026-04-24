@@ -10,7 +10,7 @@ We first focus on the bundling behavior of small $\varepsilon$-subgradients (wit
 $$\theta^{* }(W) := \min(\\| \mathrm{conv}(\\{ \nabla f_s(x^*) : s \in s(W)\\} ) \\|)$$.
 For computing mall $\varepsilon$-subgradients, we use the deterministic gradient sampling method (DGS) from https://github.com/b-gebken/DGS. Given sequences $(\varepsilon_j)\_j$ and $(\delta_j)\_j$, it computes a sequence  $x$ such that the element with the smallest norm in $\\partial f_{\varepsilon_j}(x_j)$ has norm less or equal $\delta_j$.
 
-As a start, we consider the function (8.4) from [5] for $n = 50$ and $k = 40$.
+The first example we consider is the function (8.4) from [5] for $n = 50$ and $k = 40$.
 
 <p>
   <img src="plot_DGS_bundling_1.png" height="250" />
@@ -22,6 +22,8 @@ As a start, we consider the function (8.4) from [5] for $n = 50$ and $k = 40$.
 
 The left plot shows that $(x^j)\_j$ converges to $x^{* }$. The middle plot shows that for $j$ large enough, the method correctly finds a set of selection functions for which $x^{* }$ is a critical point. The right plot shows the number of sample points and the number of selection functions that were found in each iteration $j$. Since $k = 40$, we see that the algorithm actually finds all selection functions for $j$ large enough.
 
+The second example is the function Chained Mifflin 2, which can be found, e.g., in [6].
+
 ## References
 
 [1] Gebken, B., Ulbrich, M.: Superlinear convergence in nonsmooth optimization via higher-order cutting-plane models. (2026). https://arxiv.org/abs/2603.23236 \
@@ -29,3 +31,4 @@ The left plot shows that $(x^j)\_j$ converges to $x^{* }$. The middle plot shows
 [3] Han, X.Y., Lewis, A. S.: Survey Descent: A Multipoint Generalization of Gradient Descent for Nonsmooth Optimization. SIAM J. OPTIM (2023). https://doi.org/10.1137/21M1468450 \
 [4] Gebken, B.: Technical results on the convergence of quasi-Newton methods for nonsmooth optimization. (2026). https://arxiv.org/abs/2511.03296 \
 [5] Lewis, A., Wylie, C.: A simple Newton method for local nonsmooth optimization. (2019). https://arxiv.org/abs/1907.11742 \
+[6] Haarala, M., Miettinen, K., Mäkelä, M. M.: New limited memory bundle method for large-scale nonsmooth optimization. Optimization Methods and Software (2004). https://doi.org/10.1080/10556780410001689225 \
