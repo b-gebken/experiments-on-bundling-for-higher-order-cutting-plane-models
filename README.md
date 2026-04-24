@@ -78,7 +78,7 @@ The following figure show the results when applying this scheme to the above exa
 </p>
 
 <p>
-  <img src="Chained_Mifflin_2/plot_DGS_hybrid.png" height="250" />
+  <img src="Example_Chained_Mifflin_2/plot_DGS_hybrid.png" height="250" />
   <img src="Example_LW2019_85/plot_DGS_hybrid.png" height="250" />
   <br/>
   <strong>Figure 6.</strong> DGS for Chained Mifflin 2 (left) and (8.5) from [5] (right)
