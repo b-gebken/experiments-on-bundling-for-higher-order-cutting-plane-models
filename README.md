@@ -6,7 +6,9 @@ In the following sections, we briefly describe the numerical experiments.
 
 ## Bundling via Goldstein $\varepsilon$-subgradients
 
-We first focus on the bundling behavior of small $\varepsilon$-subgradients (without subsequent superlinear steps). Let $f$ be the objective function and $x^{* }$ be a minimum. In the draft for the theory, it is shown that a small $\varepsilon$-subgradient sampled at points $W$ close to $x^{* }$ corresponds to a set of gradients for which the corresponding set $S' = s(W)$ of selection functions induces a function $F_{S'} := \max_{s \in S'} f_s$ for which the minimum $x^{* }$ is a critical point. In the following, we analyze this property in numerical experiments. As a measure of criticality of $x^{* }$ for the function $F_{s(W)}$, we use the value $$\theta^{* }(W) := \min(\\| \mathrm{conv}(\\{ \nabla f_s(x^*) : s \in s(W)\\} ) \\|)$$.
+We first focus on the bundling behavior of small $\varepsilon$-subgradients (without subsequent superlinear steps). Let $f$ be the objective function and $x^{* }$ be a minimum. In the draft for the theory, it is shown that a small $\varepsilon$-subgradient sampled at points $W$ close to $x^{* }$ corresponds to a set of gradients for which the corresponding set $S' = s(W)$ of selection functions induces a function $F_{S'} := \max_{s \in S'} f_s$ for which the minimum $x^{* }$ is a critical point. In the following, we analyze this property in numerical experiments. As a measure of criticality of $x^{* }$ for the function $F_{s(W)}$, we use the value 
+$$\theta^{* }(W) := \min(\\| \mathrm{conv}(\\{ \nabla f_s(x^*) : s \in s(W)\\} ) \\|)$$.
+For computing mall $\varepsilon$-subgradients, we use the deterministic gradient sampling method (DGS) from https://github.com/b-gebken/DGS. Given sequences $(\varepsilon_j)\_j$ and $(\delta_j)\_j$, it computes a sequence  $x$ such that the element with the smallest norm in $\\partial f_{\varepsilon_j}(x_j)$ has norm less or equal $\delta_j$.
 
 As a start, we consider the function (8.4) from [5] for $n = 50$ and $k = 40$.
 
@@ -18,7 +20,7 @@ As a start, we consider the function (8.4) from [5] for $n = 50$ and $k = 40$.
   <strong>Figure 1.</strong>
 </p>
 
-In Figure 1
+The left plot shows that $(x^j)\_j$ converges to $x^{* }$. The middle plot shows that for $j$ large enough, the method correctly finds a set of selection functions for which $x^{* }$ is a critical point. The right plot shows the number of sample points and the number of selection functions that were found in each iteration $j$. Since $k = 40$, we see that the algorithm actually finds all selection functions for $j$ large enough.
 
 ## References
 
