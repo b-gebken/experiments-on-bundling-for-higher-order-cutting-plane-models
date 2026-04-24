@@ -50,6 +50,14 @@ Despite the nonconvexity, we see the same behavior as in the first two examples.
 
 We now test the generation of bundles via BFGS, using the implementation of https://github.com/b-gebken/Nonsmooth-BFGS-experiments. More precisely, we reset the quasi-Newton matrix every $40$ iterations, and use the gradients found within resets as our bundle (cf. [5], Section 4). Due to the strong assumptions that are required in [5], we only consider the well-behaved function (8.5) from [5] here, with the same parameters a above.
 
+<p>
+  <img src="Example_LW2019_84/plot_BFGS_bundling_1.png" height="250" />
+  <img src="Example_LW2019_84/plot_BFGS_bundling_2.png" height="250" />
+  <img src="Example_LW2019_84/plot_BFGS_bundling_3.png" height="250" />
+  <br/>
+  <strong>Figure 4.</strong>
+</p>
+
 ## References
 
 [1] Gebken, B., Ulbrich, M.: Superlinear convergence in nonsmooth optimization via higher-order cutting-plane models. (2026). https://arxiv.org/abs/2603.23236 \
