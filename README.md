@@ -6,7 +6,7 @@ In the following sections, we briefly describe the numerical experiments.
 
 ## Bundling via Goldstein $\varepsilon$-subgradients
 
-We first focus on the bundling behavior of small $\varepsilon$-subgradients (without subsequent superlinear steps). Let $f$ be the objective function and $x^{* }$ be a minimum. In the draft for the theory, it is shown that a small $\varepsilon$-subgradient sampled at points $W'$ close to $x^{* }$ corresponds to a set of gradients for which the corresponding set $S' = s(W)$ of selection functions induces a function $F_{S'} := \max_{s \in S'} f_s$ for which the minimum $x^{* }$ is a critical point. In the following, we analyze this property in numerical experiments. As a measure of criticality of $x^{* }$ for the function $F_{s(W)}$, we use the value $$\theta^{* }(W) := \min(\\| \mathrm{conv}(\\{ \nabla f_s(x^*) : s \in s(W)\\} ) \\|)$$.
+We first focus on the bundling behavior of small $\varepsilon$-subgradients (without subsequent superlinear steps). Let $f$ be the objective function and $x^{* }$ be a minimum. In the draft for the theory, it is shown that a small $\varepsilon$-subgradient sampled at points $W$ close to $x^{* }$ corresponds to a set of gradients for which the corresponding set $S' = s(W)$ of selection functions induces a function $F_{S'} := \max_{s \in S'} f_s$ for which the minimum $x^{* }$ is a critical point. In the following, we analyze this property in numerical experiments. As a measure of criticality of $x^{* }$ for the function $F_{s(W)}$, we use the value $$\theta^{* }(W) := \min(\\| \mathrm{conv}(\\{ \nabla f_s(x^*) : s \in s(W)\\} ) \\|)$$.
 
 As a start, we consider the function (8.4) from [5] for $n = 50$ and $k = 40$.
 
