@@ -74,7 +74,14 @@ The following figure show the results when applying this scheme to the above exa
   <img src="Example_LW2019_84/plot_DGS_hybrid.png" height="250" />
   <img src="Example_LW2019_84/plot_BFGS_hybrid.png" height="250" />
   <br/>
-  <strong>Figure 5. (8.4) from [4] for DGS (left) and BFGS (right)</strong>
+  <strong>Figure 5.</strong> (8.4) from [4] for DGS (left) and BFGS (right)
+</p>
+
+<p>
+  <img src="Chained_Mifflin_2/plot_DGS_hybrid.png" height="250" />
+  <img src="Example_LW2019_85/plot_DGS_hybrid.png" height="250" />
+  <br/>
+  <strong>Figure 6.</strong> DGS for Chained Mifflin 2 (left) and (8.5) from [5] (right)
 </p>
 
 ## References
