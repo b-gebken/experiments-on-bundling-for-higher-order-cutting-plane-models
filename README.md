@@ -14,8 +14,11 @@ As a start, we consider the function (8.4) from [5] for $n = 50$ and $k = 40$.
   <img src="plot_DGS_bundling_1.png" height="250" />
   <img src="plot_DGS_bundling_2.png" height="250" />
   <img src="plot_DGS_bundling_3.png" height="250" />
+  <br/>
+  <strong>Figure 1.</strong>
 </p>
 
+In Figure 1
 
 ## References
 
