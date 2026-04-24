@@ -10,19 +10,31 @@ We first focus on the bundling behavior of small $\varepsilon$-subgradients (wit
 $$\theta^{* }(W) := \min(\\| \mathrm{conv}(\\{ \nabla f_s(x^*) : s \in s(W)\\} ) \\|)$$.
 For computing mall $\varepsilon$-subgradients, we use the deterministic gradient sampling method (DGS) from https://github.com/b-gebken/DGS. Given sequences $(\varepsilon_j)\_j$ and $(\delta_j)\_j$, it computes a sequence  $x$ such that the element with the smallest norm in $\\partial f_{\varepsilon_j}(x_j)$ has norm less or equal $\delta_j$.
 
-The first example we consider is the function (8.4) from [5] for $n = 50$ and $k = 40$.
+The first example we consider is the convex function (8.4) from [5] for $n = 50$ and $k = 40$. It is well-behaved since the gradients of the selection functions are affinely independent at the minimum.
 
 <p>
-  <img src="plot_DGS_bundling_1.png" height="250" />
-  <img src="plot_DGS_bundling_2.png" height="250" />
-  <img src="plot_DGS_bundling_3.png" height="250" />
+  <img src="Example_LW2019_84/plot_DGS_bundling_1.png" height="250" />
+  <img src="Example_LW2019_84/plot_DGS_bundling_2.png" height="250" />
+  <img src="Example_LW2019_84/plot_DGS_bundling_3.png" height="250" />
   <br/>
   <strong>Figure 1.</strong>
 </p>
 
 The left plot shows that $(x^j)\_j$ converges to $x^{* }$. The middle plot shows that for $j$ large enough, the method correctly finds a set of selection functions for which $x^{* }$ is a critical point. The right plot shows the number of sample points and the number of selection functions that were found in each iteration $j$. Since $k = 40$, we see that the algorithm actually finds all selection functions for $j$ large enough.
 
-The second example is the function Chained Mifflin 2, which can be found, e.g., in [6].
+The second example is the convex function Chained Mifflin 2 for $n = 51$, which can be found, e.g., in [6].
+
+<p>
+  <img src="Chained_Mifflin_2/plot_DGS_bundling_1.png" height="250" />
+  <img src="Chained_Mifflin_2/plot_DGS_bundling_2.png" height="250" />
+  <img src="Chained_Mifflin_2/plot_DGS_bundling_3.png" height="250" />
+  <br/>
+  <strong>Figure 2.</strong>
+</p>
+
+We see the same result as in the first example, even though this function has $2^{n-1} \approx 1.13 \cdot 10^{15}$ selection functions (which are affinely dependent).
+
+The third example is the nonconvex function (8.5) from [5] for $n = 50$ and $k = 40$.
 
 ## References
 
