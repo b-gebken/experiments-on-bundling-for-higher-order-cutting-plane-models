@@ -92,3 +92,6 @@ The following figures show the results when applying this scheme to the above ex
 [4] Gebken, B.: Technical results on the convergence of quasi-Newton methods for nonsmooth optimization. (2026). https://arxiv.org/abs/2511.03296 \
 [5] Lewis, A., Wylie, C.: A simple Newton method for local nonsmooth optimization. (2019). https://arxiv.org/abs/1907.11742 \
 [6] Haarala, M., Miettinen, K., Mäkelä, M. M.: New limited memory bundle method for large-scale nonsmooth optimization. Optimization Methods and Software (2004). https://doi.org/10.1080/10556780410001689225 \
+
+<h1>Acknowledgements</h1>
+This research was funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – Projektnummer 545166481.
