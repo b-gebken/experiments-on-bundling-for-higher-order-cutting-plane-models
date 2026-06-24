@@ -63,7 +63,7 @@ We see that BFGS is indeed able to find a suitable bundle.
 ## Superlinear steps
 
 We now use the above bundling mechanisms to perform superlinear steps using the higher-order cutting-plane model of [1]. To this end, we use the following simple iterative scheme:
-1. Apply a bundling mechanism (DSG or BFGS) with final iterate $x^{j }$.
+1. Apply a bundling mechanism (DGS or BFGS) with final iterate $x^{j }$.
 2. Solve the the resulting subproblem (3.4) of [1], yielding a point $\bar{z}$.
 3. If $f(\bar{z}) < f(x^{j })$ then set $x^j = \bar{z}$.
 4. Increase $j$ and go to 1.
