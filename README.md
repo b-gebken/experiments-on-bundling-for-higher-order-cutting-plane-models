@@ -72,7 +72,7 @@ The following figures show the results when applying this scheme to the above ex
   <img src="Example_LW2019_84/plot_DGS_hybrid.png" height="250" />
   <img src="Example_LW2019_84/plot_BFGS_hybrid.png" height="250" />
   <br/>
-  <strong>Figure 5.</strong> (8.4) from [4] for DGS (left) and BFGS (right)
+  <strong>Figure 5.</strong> (8.4) from [5] for DGS (left) and BFGS (right)
 </p>
 
 <p>
