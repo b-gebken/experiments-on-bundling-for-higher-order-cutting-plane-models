@@ -1,6 +1,6 @@
 # Experiments on bundling for higher-order cutting-plane models
 
-In [1], a higher-order trust-region bundle method was derived that achieves superlinear convergence of serious steps for $\text{lower-}C^2$ functions with polynomial growth. While the bundling mechanism (Alg. 4.1 in [1], performing the "null steps") that was used for this is relatively efficient in terms of oracle calls, it is not efficient in terms of runtime. (The reason for this is the fact that a nonconvex non-quadratic subproblem has to be solved for each null step.) The numerical experiments in this repository suggest that there is an alternative, more time-efficient way of computing the bundles required for performing superlinear steps in case the objective is a finite max-type function. The idea is to combine the exploratory nature of gradient sampling methods (as observed in [2], Thm. 52) with an improved error estimate for higher-order cutting-plane models. A draft of the related theory is contained in Draft_Theoretical_background.pdf. In addition to gradient sampling, the improved error estimate suggests that any bundling mechanism that explores the nonsmooth structure well enough can potentially be used for computing appropriate bundles. We demonstrate this by testing BFGS, which is known to have exploratory properties (see, e.g., [3], Remark 20, and [5], Section 4), for computing the bundle.   
+In [1], a higher-order trust-region bundle method was derived that achieves superlinear convergence of serious steps for $\text{lower-}C^2$ functions with polynomial growth. While the bundling mechanism (Alg. 4.1 in [1], performing the "null steps") that was used for this is relatively efficient in terms of oracle calls, it is not efficient in terms of runtime. (The reason for this is the fact that a nonconvex non-quadratic subproblem has to be solved for each null step.) The numerical experiments in this repository suggest that there is an alternative, more time-efficient way of computing the bundles required for performing superlinear steps in case the objective is a finite max-type function. The idea is to combine the exploratory nature of gradient sampling methods (as observed in [2], Thm. 52) with an improved error estimate for higher-order cutting-plane models. A draft of the related theory is contained in Draft_Theoretical_background.pdf. In addition to gradient sampling, the improved error estimate suggests that any bundling mechanism that explores the nonsmooth structure well enough can potentially be used for computing appropriate bundles. We demonstrate this by testing BFGS, which is known to have exploratory properties (see, e.g., [3], Remark 20, and [4], Section 4), for computing the bundle.   
 
 ## Bundling via Goldstein $\varepsilon$-subgradients
 
@@ -46,7 +46,7 @@ Despite the nonconvexity, we see the same behavior as in the first two examples.
 
 ## Bundling via BFGS
 
-We now test the generation of bundles via BFGS, using the implementation of https://github.com/b-gebken/Nonsmooth-BFGS-experiments. More precisely, we reset the quasi-Newton matrix every $40$ iterations, and use the gradients found between consecutive resets as our bundle (cf. [4], Section 4). Due to the strong assumptions that are required in [4], we only consider the well-behaved function (8.5) from [5] here, with the same parameters as above.
+We now test the generation of bundles via BFGS, using the implementation of https://github.com/b-gebken/Nonsmooth-BFGS-experiments. More precisely, motivated by Section 4 in [4], we reset the quasi-Newton matrix every $40$ iterations, and use the gradients found between consecutive resets as our bundle. Due to the strong assumptions that are required in [4], we only consider the well-behaved function (8.5) from [5] here, with the same parameters as above.
 
 <p>
   <img src="Example_LW2019_84/plot_BFGS_bundling_1.png" height="250" />
@@ -87,9 +87,9 @@ The following figures show the results when applying this scheme to the above ex
 [1] Gebken, B., Ulbrich, M.: Superlinear convergence in nonsmooth optimization via higher-order cutting-plane models. (2026). https://arxiv.org/abs/2603.23236 \
 [2] Han, X.Y.: Blackbox optimization, Nonsmooth Structure, and Survey Descent. PhD thesis, Cornell University Library (2023). https://doi.org/10.7298/4RRV-8H61 \
 [3] Han, X.Y., Lewis, A. S.: Survey Descent: A Multipoint Generalization of Gradient Descent for Nonsmooth Optimization. SIAM J. OPTIM (2023). https://doi.org/10.1137/21M1468450 \
-[4] Gebken, B.: Technical results on the convergence of quasi-Newton methods for nonsmooth optimization. (2026). https://arxiv.org/abs/2511.03296 \
+[4] Gebken, B.: Technical results on the convergence of quasi-Newton methods for nonsmooth optimization. Journal of Optimization Theory and Applications (2026). https://link.springer.com/article/10.1007/s10957-026-03008-z \
 [5] Lewis, A., Wylie, C.: A simple Newton method for local nonsmooth optimization. (2019). https://arxiv.org/abs/1907.11742 \
-[6] Haarala, M., Miettinen, K., Mäkelä, M. M.: New limited memory bundle method for large-scale nonsmooth optimization. Optimization Methods and Software (2004). https://doi.org/10.1080/10556780410001689225 \
+[6] Haarala, M., Miettinen, K., Mäkelä, M. M.: New limited memory bundle method for large-scale nonsmooth optimization. Optimization Methods and Software (2004). https://doi.org/10.1080/10556780410001689225
 
 <h1>Acknowledgements</h1>
 This research was funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – Projektnummer 545166481.
