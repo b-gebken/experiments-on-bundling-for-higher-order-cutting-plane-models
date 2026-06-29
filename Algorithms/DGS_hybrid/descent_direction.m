@@ -4,34 +4,39 @@
 
 function [v,f_eps_v,memory,eval_counter,bundle] = descent_direction(x,f_x,f,subgrad_f,eps,delta,c,rand_sample_N,memory,qp_optns,eval_counter)
 
-if(rand_sample_N == 0)
-    % Step 1 in [GP2021] (Deterministic initial approximation)
-    W = subgrad_f(x); eval_counter.subgrad_eval = eval_counter.subgrad_eval + 1;
-    if(memory.max_size > 0)
-        memory = add_to_memory(x,W,memory);
-    end
-
-    bundle.sample_pts = x;
-else
-    % Random initial approximation
-    n = size(x,1);
-    W = zeros(n,rand_sample_N);
-    rand_init_pts = x + eps*sample_hypersphere(n,rand_sample_N);
-    for i = 1:rand_sample_N
-        W(:,i) = subgrad_f(rand_init_pts(:,i)); eval_counter.subgrad_eval = eval_counter.subgrad_eval + 1;
-    end
-    if(memory.max_size > 0)
-        memory = add_to_memory(rand_init_pts,W,memory);
-    end
-
-    bundle.sample_pts = rand_init_pts;
-end
+W = [];
+bundle.sample_pts = [];
 
 % Add subgradients at sample points in B_eps(x) from memory
 if(memory.max_size > 0 && ~isempty(memory.sample_pts))
     inside_Beps = vecnorm(memory.sample_pts - x,2,1) <= eps + 10^-14; % Tolerance for machine precision
     W = [W,memory.subgrads(:,inside_Beps)];
-    bundle.sample_pts = [bundle.sample_pts,memory.sample_pts(:,inside_Beps)];
+    bundle.sample_pts = [bundle.sample_pts, memory.sample_pts(:,inside_Beps)];
+end
+
+if(rand_sample_N == 0)
+    % Step 1 in [GP2021] (Deterministic initial approximation)
+    subgrad_f_x = subgrad_f(x);
+    W = [W,subgrad_f_x]; eval_counter.subgrad_eval = eval_counter.subgrad_eval + 1;
+    if(memory.max_size > 0)
+        memory = add_to_memory(x,subgrad_f_x,memory);
+    end
+
+    bundle.sample_pts = [bundle.sample_pts,x];
+else
+    % Random initial approximation
+    n = size(x,1);
+    W_rnd = zeros(n,rand_sample_N);
+    rand_init_pts = x + eps*sample_hypersphere(n,rand_sample_N);
+    for i = 1:rand_sample_N
+        W_rnd(:,i) = subgrad_f(rand_init_pts(:,i)); eval_counter.subgrad_eval = eval_counter.subgrad_eval + 1;
+    end
+    W = [W,W_rnd];
+    if(memory.max_size > 0)
+        memory = add_to_memory(rand_init_pts,W_rnd,memory);
+    end
+
+    bundle.sample_pts = [bundle.sample_pts,rand_init_pts];
 end
 
 while(1)
